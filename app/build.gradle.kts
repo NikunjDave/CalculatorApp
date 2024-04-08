@@ -50,6 +50,7 @@ android {
 
 dependencies {
 	implementation("com.google.dagger:hilt-android:2.44")
+	testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
 	kapt("com.google.dagger:hilt-android-compiler:2.44")
 	implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
 	// When using Kotlin.
@@ -75,4 +76,7 @@ dependencies {
 }
 kapt{
 	correctErrorTypes = true
+}
+tasks.withType<Test> {
+	useJUnitPlatform()
 }
